@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="scrap.heap.refactor.AppTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-06-05T00:54:22" hostname="Jeremiahs-MacBook-Pro.local" time="0.001">
+<testsuite name="scrap.heap.refactor.AppTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2019-08-12T05:26:43" hostname="Intelliswifts-MacBook-Pro-9.local" time="0.004">
   <properties/>
-  <testcase name="testAppHasAGreeting" classname="scrap.heap.refactor.AppTest" time="0.001"/>
-  <system-out><![CDATA[]]></system-out>
+  <testcase name="testOrderCake" classname="scrap.heap.refactor.AppTest" time="0.002"/>
+  <testcase name="testOrderCakeBalloon" classname="scrap.heap.refactor.AppTest" time="0.001"/>
+  <testcase name="testAppHasAGreeting" classname="scrap.heap.refactor.AppTest" time="0.0"/>
+  <testcase name="testOrderBalloon" classname="scrap.heap.refactor.AppTest" time="0.001"/>
+  <system-out><![CDATA[Cake ordered; chocolate, Vanilla, square, medium, brown
+Balloons ordered; blue, latex, 7
+Cake ordered; chocolate, Vanilla, square, medium, brown
+Balloons ordered; blue, latex, 7
+]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

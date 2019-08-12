@@ -3,12 +3,56 @@
  */
 package scrap.heap.refactor;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+
+import java.util.List;
+
 import org.junit.Test;
-import static org.junit.Assert.*;
+import org.refactor.lendup.model.Balloon;
+import org.refactor.lendup.model.Cake;
+import org.refactor.lendup.model.Cake.Size;
+import org.refactor.lendup.model.Item;
 
 public class AppTest {
-    @Test public void testAppHasAGreeting() {
+    @Test 
+    public void testAppHasAGreeting() {
         App classUnderTest = new App();
         assertNotNull("app should have a greeting", classUnderTest.getGreeting());
+    }
+    
+    @Test 
+    public void testOrderCakeBalloon() {
+        App app = new App();
+        Balloon balloon = Balloon.builder().color("blue").material("latex").addQuantity(7).build();
+        Cake cake = Cake.builder().addFlavor("chocolate").addFrostingFlavor("Vanilla").shape("square").size(Size.medium).addColor("brown").build();
+        app.order(balloon, cake);
+        List<Item> orders = app.getOrders();
+        assertEquals(2, orders.size());
+        
+        
+    }
+    
+    @Test 
+    public void testOrderCake() {
+        App app = new App();
+        Cake cake = Cake.builder().addFlavor("chocolate").addFrostingFlavor("Vanilla").shape("square").size(Size.medium).addColor("brown").build();
+        app.order(null, cake);
+        List<Item> orders = app.getOrders();
+        assertEquals(1, orders.size()); 
+        assertTrue(orders.get(0) instanceof Cake);
+        
+    }
+    
+    @Test 
+    public void testOrderBalloon() {
+        App app = new App();
+        Balloon balloon = Balloon.builder().color("blue").material("latex").addQuantity(7).build();
+        app.order(balloon, null);
+        List<Item> orders = app.getOrders();
+        assertEquals(1, orders.size());
+        assertTrue(orders.get(0) instanceof Balloon);
+        
     }
 }
